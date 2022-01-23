@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>History Page</title>
+</head>
+<body>
+<table>
+   <tr>
+      <th>id</th>
+      <th>Name</th>
+      <th>Number of Leave</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+       <td>{{item.id}}</td>
+       <td>{{item.username}}
+       <td>{{item.pending}}</td>
+    </tr>
+    {% endfor %}
+</table>
+     <a href="{{url_for('login') }}" class="btn btn-warning btn-xs">Logout</a>
+</body>
