@@ -1,4 +1,5 @@
 # requirements.txt
 
-Flask
+Flask==1.1.1
 Werkzeug
+gunicorn==20.0.4
