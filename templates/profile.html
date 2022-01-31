@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method="POST" action="/add">
+    <section class="hero is-success is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            {{g.user.username}}'s Profile
+          </h1>
+          <h2 class="subtitle">
+            You are user number #{{g.user.id}}
+          </h2>
+          <div class="search-container">
+            <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing: 1px;">
+              <input type="text" placeholder="Search.." name="search" type="search">
+              <button class="btn btn-primary" type="submit">Search!</button>
+              <a href="submit" class="w3-bar-item w3-button">Apply Leave</a><br>
+              <a href="login" class="w3-bar-item w3-button">Logout and Exit!</a> <br>
+              <a href="database" class="w3-bar-item w3-button">Summary Page</a> <br>
+              <a href="subscribe" class="w3-bar-item w3-button">Content</a><br>
+              <a href="history" class="w3-bar-item w3-button">History</a>
+         </div>
+<table class="table table-hover table-dark">
+        <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number of Days Left</th>
+                <th>Pending</th>
+              </tr>
+              {% for item in items %}
+              <tr>
+                <td>{{  item.username }}</td> 
+                <td>{{  item.pending }}</td>
+              </tr>
+              {% endfor %}
+        </thead>
+           <tbody>
+           </tbody>
+         </table>
+        </div>
+      </div>
+      
+</section>
+</form>
+{% endblock %}
+
